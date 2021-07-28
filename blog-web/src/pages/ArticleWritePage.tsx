@@ -13,6 +13,7 @@ export const ArticleWritePage = () => {
         <h1>새로 작성</h1>
         <input
           className="border rounded-md border-gray-200 p-2"
+          placeholder="제목"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />

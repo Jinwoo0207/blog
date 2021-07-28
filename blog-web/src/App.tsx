@@ -1,13 +1,15 @@
 import React from "react";
-import { Card } from "./components/Card";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HomePage, ArticlePage } from "./pages";
 
 function App() {
   return (
-    <div>
-      <h1>Blog</h1>
-      <p>My Blog Service</p>
-      <Card title="제목" />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/articles" component={ArticlePage} />
+        <Route path="/" component={HomePage} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

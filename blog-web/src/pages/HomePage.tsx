@@ -10,7 +10,7 @@ export const HomePage = () => {
     <>
       {/* Header */}
       <div className="sticky top-0 p-2 bg-white shadow-lg w-full h-14">
-        <div className="w-full max-w-screen-lg mx-auto flex items-end">
+        <div className="w-full max-w-screen-xl mx-auto flex items-end">
           <h1 className="font-extrabold text-4xl text-blue-700">블로그</h1>
           <p className="pl-3 text-xl text-gray-500">블로그입니다.</p>
         </div>

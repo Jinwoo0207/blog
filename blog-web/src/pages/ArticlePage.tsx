@@ -17,7 +17,23 @@ export const ArticlePage = () => {
 
   return (
     <>
-      <button onClick={goBack}>뒤로가기</button>
+      <div className="flex p-2 space-x-2">
+        <button
+          className="px-4 py-2 bg-green-600 text-white rounded-md"
+          onClick={goBack}
+        >
+          뒤로가기
+        </button>
+        <button
+          className="px-4 py-2 bg-green-600 text-white rounded-md"
+          onClick={async () => {
+            await axios.delete(`http://localhost:8000/articles/${id}`);
+            goBack();
+          }}
+        >
+          삭제
+        </button>
+      </div>
       <p>{article.title}</p>
       <img src={article.thumbnail} alt="thumb" />
       <p>{article.contents}</p>

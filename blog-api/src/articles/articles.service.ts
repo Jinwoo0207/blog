@@ -12,6 +12,13 @@ export class ArticlesService {
   }
 
   addArticles(article: Article) {
-    articles.push(article);
+    const id = articles.sort((a, b) => b.id - a.id)[0].id + 1;
+    const thumbnail = `https://source.unsplash.com/random/400x400?sig=${id}`;
+    articles.push({ ...article, id, thumbnail });
+  }
+
+  deleteArticle(id: number) {
+    const index = articles.findIndex((article) => article.id === id);
+    articles.splice(index, 1);
   }
 }

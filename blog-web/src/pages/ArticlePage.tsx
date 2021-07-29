@@ -11,16 +11,15 @@ export const ArticlePage = () => {
     axios
       .get(`http://localhost:8000/articles/${id}`)
       .then(({ data }) => setArticle(data));
-  });
-  console.log(article);
+  }, [id]);
 
   if (!article) return <>404 NOT FOUND</>;
 
   return (
     <>
       <button onClick={goBack}>뒤로가기</button>
-      <img src={article.thumbnail} alt="thumb" />
       <p>{article.title}</p>
+      <img src={article.thumbnail} alt="thumb" />
       <p>{article.contents}</p>
     </>
   );

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { Article } from "../dummy";
+import { momentFormat } from "../plugins/moment";
 import { recentState } from "../plugins/ridge";
 
 export const ArticlePage = () => {
@@ -39,9 +40,10 @@ export const ArticlePage = () => {
           삭제
         </button>
       </div>
-      <p>{article.title}</p>
+      <h1 className="text-4xl">{article.title}</h1>
+      <p className="text-gray-500">{momentFormat(article.createdAt, "LLLL")}</p>
       <img src={article.thumbnail} alt="thumb" />
-      <p>{article.contents}</p>
+      <p className="text-gray-500 text-sm">{article.contents}</p>
     </>
   );
 };

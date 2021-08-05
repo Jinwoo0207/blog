@@ -7,7 +7,7 @@ import {
   ParseIntPipe,
   Post,
 } from '@nestjs/common';
-import { Article } from './articles.entity';
+import { Article } from './article.entity';
 import { ArticlesService } from './articles.service';
 
 @Controller('articles')
